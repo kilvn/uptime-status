@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Link from './link';
 import Header from './header';
 import UptimeRobot from './uptimerobot';
-import Package from '../../package.json';
+import moment from 'moment';
 
 function App() {
 
@@ -23,8 +23,7 @@ function App() {
           ))}
         </div>
         <div id='footer'>
-          <p>基于 <Link to='https://uptimerobot.com/' text='UptimeRobot' /> 接口制作，检测频率 5 分钟</p>
-          <p>&copy; 2020 <Link to='https://status.org.cn/' text='STATUS.ORG.CN' />, Version {Package.version}</p>
+          <p><Link className='other-link' to='https://www.kilvn.cn/' text='Server Status' /> &copy; {moment().format('YYYY')} <Link to='https://www.kilvn.com/' text='逆天西瓜' /> Corp.</p>
         </div>
       </div>
     </>
