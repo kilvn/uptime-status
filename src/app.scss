@@ -230,6 +230,7 @@ a {
   &.loading {
     margin-top: -30px;
     min-height: 360px;
+    padding: 0;
     .site {
       padding: 0;
       margin: 10% 30px;
@@ -426,6 +427,10 @@ a {
     .flex-right {
       margin-top: 15px !important;
     }
+  }
+
+  #uptime.loading .site {
+    margin: 45% 30px;
   }
 }
 
