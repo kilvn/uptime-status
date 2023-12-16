@@ -26,40 +26,8 @@ a {
   }
 }
 
-@media (min-width: 576px) {
-  #app .container {
-    max-width:540px
-  }
-}
-
-@media (min-width: 768px) {
-  #app .container {
-    max-width:720px
-  }
-}
-
-@media (min-width: 992px) {
-  #app .container {
-    max-width:960px
-  }
-}
-
-@media (min-width: 1200px) {
-  #app .container {
-    max-width:1140px
-  }
-}
-
-@media (min-width: 1400px) {
-  #app .container {
-    max-width:1320px
-  }
-}
-
-
 #header {
   background-color: #121a26;
-  //padding: 80px 0 30px 0;
   padding: 80px 0 110px 0;
   color: $primary-color;
   width: 100%;
@@ -98,7 +66,7 @@ a {
 }
 
 .topbar {
-  margin: 25px -30px;
+  margin: 25px -30px 20px;
   height: 3px;
   opacity: .6;
 
@@ -130,14 +98,143 @@ a {
   }
 }
 
-#uptime {
+.status-icon {
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  -ms-transform: none;
+  transform: none;
+  &.is-big {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    &::after {
+      animation: pulseBig 2s infinite;
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: currentColor;
+    animation: pulse 2s infinite;
+    opacity: 1;
+    border-radius: 50%;
+    top: 0;
+    left: 0
+  }
+
+  &.ok {
+    color: $primary-color;
+    background: $primary-color;
+  }
+  &.fail {
+    color: #df484a;
+    background: #df484a;
+  }
+  &.warning {
+  color: #f29030;
+  background: #f29030
+}
+  &.unknow {
+    color: #637189;
+    background: #637189;
+  }
+}
+
+@keyframes pulseBig {
+  0% {
+    opacity: 0.5
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(1.6)
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(2.5)
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+#overall {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin-top: -30px;
   margin-bottom: 40px;
+  padding: 35px 40px;
+  overflow: hidden;
+  line-height: 1.33;
+  .flex-parent {
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .flex-left {
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .text-item {
+        margin: 0;
+        .text-status {}
+
+        .text-status.ok {
+          color: $primary-color;
+        }
+        .text-status.wain {
+          color: #f29030;
+        }
+        .text-status.unknow {
+          color: #637189;
+        }
+      }
+    }
+    .flex-right {
+      color: #687790 !important;
+      margin-top: 10px;
+    }
+  }
+}
+
+#uptime {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
   padding: 15px 0;
   overflow: hidden;
+  &.loading {
+    margin-top: -30px;
+    min-height: 360px;
+    .site {
+      padding: 0;
+      margin: 10% 30px;
+    }
+  }
   .site {
     //border-bottom: 1px solid #e6e7e8;
     margin: 0 30px;
@@ -165,7 +262,6 @@ a {
         width: 13px;
         height: 13px;
         text-indent: -99999px;
-        margin-left: 8px;
         opacity: 0.6;
         transition: opacity ease 150ms;
         display: inline-block;
@@ -186,62 +282,18 @@ a {
         transition: opacity ease 150ms;
         &:hover {
           opacity: 1;
+          color: $primary-color;
         }
       }
       .status {
-        padding-left: 10px;
         margin-left: auto;
         color: $primary-color;
-
-        .status-icon {
-          width: 12px;
-          height: 12px;
-          display: inline-block;
-          border-radius: 50%;
-          position: relative;
-          -ms-transform: none;
-          transform: none;
-
-          &::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            -ms-transform: none;
-            transform: none;
-            position: absolute;
-            background: currentColor;
-            animation: pulse 2s infinite;
-            opacity: 1;
-            top: 0;
-            left: 0
-          }
-
-          @media (prefers-reduced-motion) {
-            &::after {
-              animation: none !important
-            }
-          }
-
-          &.ok {
-            color: $primary-color;
-            background: $primary-color;
-          }
-          &.fail {
-            color: #df484a;
-            background: #df484a;
-          }
-          &.unknow {
-            color: #637189;
-            background: #637189;
-          }
-        }
       }
     }
     .timeline {
       display: flex;
       justify-content: space-between;
-      margin: 15px 0 10px 0;
+      margin: 20px auto;
 
       &::before {
         display: none;
@@ -292,21 +344,6 @@ a {
   }
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.5
-  }
-
-  70% {
-    opacity: 0;
-    transform: scale(2.5)
-  }
-
-  100% {
-    opacity: 0
-  }
-}
-
 .__react_component_tooltip.place-top::before {
   display: none !important;
 }
@@ -324,5 +361,88 @@ a {
 
   .other-link {
     margin-right: 20px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .status-icon:after {
+    animation: none !important
+  }
+
+  .status-icon.is-big:after {
+    animation: none !important
+  }
+}
+
+@media (min-width: 576px) {
+  #app .container {
+    max-width:540px
+  }
+}
+
+@media (min-width: 768px) {
+  #app .container {
+    max-width:720px
+  }
+}
+
+@media (min-width: 960px) {
+  #overall .left-text {
+    text-align: left !important;
+    h2 {
+      font-size: 2rem;
+      line-height: 1.096;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  #header {
+    padding: 60px 0 90px 0;
+    .logo {
+      font-size: 28px;
+    }
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+
+  #overall {
+    .flex-left {
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+      .status-icon {
+        margin-right: 0;
+      }
+
+      .text-item {
+        width: 100%;
+        margin-top: 15px !important;
+        text-align: center;
+      }
+    }
+
+    .flex-right {
+      margin-top: 15px !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #app .container {
+    max-width:960px
+  }
+}
+
+@media (min-width: 1200px) {
+  #app .container {
+    max-width:1140px
+  }
+}
+
+@media (min-width: 1400px) {
+  #app .container {
+    max-width:1320px
   }
 }

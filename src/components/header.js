@@ -14,7 +14,7 @@ function Header() {
     <div id='header'>
       <div className='container'>
         <h1 className='logo'>{window.Config.SiteName}</h1>
-        <p className='subtitle'>检测频率 5 分钟</p>
+        <p className='subtitle'>检测频率 {window.Config.DetectionFrequency} 分钟</p>
         {/*<div className='navi'>*/}
         {/*  {window.Config.Navi.map((item, index) => (*/}
         {/*    <Link key={index} to={item.url} text={item.text} />*/}
