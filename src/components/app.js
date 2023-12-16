@@ -33,7 +33,6 @@ function App() {
   if (upSiteNum < monitors.length) upSiteStatus = 'wain';
   if (upSiteNum === 0) upSiteStatus = 'unknow';
 
-  monitors = []
   return (
       <>
         <Header/>
