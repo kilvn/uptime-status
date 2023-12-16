@@ -15,7 +15,7 @@
     "react-scripts": "^5.0.1",
     "react-tooltip": "^4.2.21",
     "sass": "^1.53.0",
-    "webpack": "^4.29.6"
+    "webpack": "^4.47.0"
   },
   "browserslist": {
     "production": [
