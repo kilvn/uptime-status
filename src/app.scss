@@ -242,12 +242,18 @@ a {
       display: flex;
       justify-content: space-between;
       margin: 15px 0 10px 0;
+
+      &::before {
+        display: none;
+      }
+
       i {
         flex-grow: 1;
         margin: 0 1px;
         height: 25px;
         border-radius: 5px;
         transition: opacity ease 150ms;
+
         &.ok {
           background-color: $primary-color;
         }
@@ -299,6 +305,10 @@ a {
   100% {
     opacity: 0
   }
+}
+
+.__react_component_tooltip.place-top::before {
+  display: none !important;
 }
 
 #footer {

@@ -21,7 +21,7 @@ function UptimeRobot({ apikey }) {
   }, [apikey, CountDays]);
 
   if (monitors) {
-      let dataLength = monitors.length,
+      let dataLength = monitors.length ?? 0,
           okNodeNum = 0;
       return monitors.map((site, indexKey) => (
           <div key={site.id} className='site'>
@@ -37,7 +37,7 @@ function UptimeRobot({ apikey }) {
                       if (data.uptime >= 100) {
                           okNodeNum += 1
                           status = 'ok';
-                          text += `可用率 ${formatNumber(data.uptime)}%`;
+                          text += "\n" + `可用率 ${formatNumber(data.uptime)}%`;
                       } else if (data.uptime <= 0 && data.down.times === 0) {
                           status = 'none';
                           text += '无数据';
