@@ -200,6 +200,7 @@ a {
 
       .text-item {
         margin: 0;
+        line-height: 1.096;
         .text-status {}
 
         .text-status.ok {
@@ -333,6 +334,20 @@ a {
       font-size: 13px;
       line-height: 15px;
       color: #9aa2af;
+
+      span {
+        min-width: calc(100% / 3);
+
+        &:first-child {
+          text-align: left;
+        }
+        &:nth-child(2) {
+          text-align: center;
+        }
+        &:nth-child(3) {
+          text-align: right;
+        }
+      }
     }
     .tooltip {
       padding: 6px 9px !important;
@@ -415,17 +430,36 @@ a {
       width: 100%;
       .status-icon {
         margin-right: 0;
+        width: 60px;
+        height: 60px;
       }
 
       .text-item {
         width: 100%;
         margin-top: 15px !important;
         text-align: center;
+        padding: 5px 0;
       }
     }
 
     .flex-right {
       margin-top: 15px !important;
+    }
+  }
+
+  #uptime {
+    .site {
+      .summary {
+        span {
+          min-width: auto;
+        }
+      }
+
+      .timeline {
+        i {
+          width: 3px;
+        }
+      }
     }
   }
 }
