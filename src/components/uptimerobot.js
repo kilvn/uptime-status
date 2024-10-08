@@ -1,4 +1,4 @@
-import * as ReactTooltip from 'react-tooltip';
+import ReactTooltip from 'react-tooltip';
 import { formatDuration, formatNumber } from '../common/helper';
 import Link from './link';
 
