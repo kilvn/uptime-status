@@ -133,7 +133,7 @@ a {
     color: $primary-color;
     background: $primary-color;
   }
-  &.fail {
+  &.fail, &.down {
     color: #df484a;
     background: #df484a;
   }
@@ -206,7 +206,7 @@ a {
         .text-status.ok {
           color: $primary-color;
         }
-        .text-status.wain {
+        .text-status.warn {
           color: #f29030;
         }
         .text-status.unknow {

@@ -1,6 +1,6 @@
 const overallStatus = {
     ok: '正常运行',
-    wain: '部分运行',
+    warn: '部分运行',
     unknow: '状态未知'
 };
 

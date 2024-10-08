@@ -7,15 +7,15 @@
     "build": "react-scripts build"
   },
   "dependencies": {
-    "axios": "^1.6.2",
-    "dayjs": "^1.11.3",
-    "moment": "^2.29.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "moment": "^2.30.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
-    "react-tooltip": "^4.2.21",
-    "sass": "^1.53.0",
-    "webpack": "^4.47.0"
+    "react-tooltip": "^5.28.0",
+    "sass": "^1.79.4",
+    "webpack": "^5.95.0"
   },
   "browserslist": {
     "production": [

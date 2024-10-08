@@ -30,7 +30,7 @@ function App() {
     });
   });
 
-  if (upSiteNum < monitors.length) upSiteStatus = 'wain';
+  if (upSiteNum < monitors.length) upSiteStatus = 'warn';
   if (upSiteNum === 0) upSiteStatus = 'unknow';
 
   return (
