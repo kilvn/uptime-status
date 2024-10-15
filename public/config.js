@@ -35,8 +35,8 @@ window.Config = {
       url: 'https://github.com/kilvn'
     },
     {
-      text: '博客',
-      url: 'https://blog.kilvn.com/'
+      text: '服务器状态',
+      url: 'https://www.kilvn.cn/'
     },
   ],
 };
