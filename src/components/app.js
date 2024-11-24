@@ -48,7 +48,7 @@ function App() {
           </div>
 
           <div id='footer'>
-            {copyright}
+            <p v-htlm="copyright"></p>
             <p>
               <Link className='other-link' to='https://www.kilvn.cn/' text='服务器状态'/>
               &copy; {moment().format('YYYY')} <Link to='https://www.kilvn.com/' text='逆天西瓜'/> Corp.
