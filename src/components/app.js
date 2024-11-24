@@ -49,9 +49,8 @@ function App() {
 
           <div id='footer'>
             <p>
-              <Link className='other-link' to='https://www.kilvn.cn/' text='服务器状态'/>
-              &copy; {moment().format('YYYY')} <Link to='https://www.kilvn.com/' text='逆天西瓜'/> Corp.
-              &nbsp; &nbsp; <span v-htlm="copyright"></span>
+              <Link className='other-link' to='https://www.kilvn.cn/' text='服务器状态'/> &copy; {moment().format('YYYY')} <Link to='https://www.kilvn.com/' text='逆天西瓜'/> Corp.
+              <br/>自豪地使用 <Link to='https://github.com/yb/uptime-status' text='uptime-status'/> 构建。
             </p>
           </div>
         </div>

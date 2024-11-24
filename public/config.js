@@ -9,8 +9,6 @@ window.Config = {
   // 全局状态-右侧区域
   OverallStatusText: '',
 
-  copyright: "自豪地使用 <a href='https://github.com/yb/uptime-status' target='_blank'>uptime-status</a> 构建",
-
   // UptimeRobot Api Keys
   // 支持 Monitor-Specific 和 Read-Only
   ApiKeys: [
