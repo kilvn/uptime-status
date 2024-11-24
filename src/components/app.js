@@ -14,7 +14,7 @@ function App() {
     return [];
   }, []);
 
-  const { CountDays, ShowLink } = window.Config;
+  const { CountDays, ShowLink, copyright } = window.Config;
 
   let monitors = [],
       upSiteNum = 0,
@@ -48,6 +48,7 @@ function App() {
           </div>
 
           <div id='footer'>
+            {copyright}
             <p>
               <Link className='other-link' to='https://www.kilvn.cn/' text='服务器状态'/>
               &copy; {moment().format('YYYY')} <Link to='https://www.kilvn.com/' text='逆天西瓜'/> Corp.
